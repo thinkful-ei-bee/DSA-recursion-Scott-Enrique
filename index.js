@@ -1,23 +1,34 @@
+'use strict';
+
 function countSheep(num){
-    if(num < 1){
-      console.log( "all sheep have jumped over the fence", num)
-      return;
-    } else{
-      console.log('another sheep have jumped over the fence', num)
-      return countSheep(num - 1);
-    }
+  if(num < 1){
+    console.log( 'all sheep have jumped over the fence', num);
+    return;
+  } else{
+    console.log('another sheep have jumped over the fence', num);
+    return countSheep(num - 1);
   }
+}
+countSheep(3);
 
-  countSheep(3)
 
-  function powerCalculator(num, exp){
-    if(exp < 0 ){
-      return "exponent should be >= 0"
-    }
-    if(exp === 0){
-      return 1;
-    }else{
-      return num*powerCalculator(num, exp-1);
-    }
+function powerCalculator(num, exp){
+  if(exp < 0 ){
+    return 'exponent should be >= 0';
   }
-  powerCalculator(10,1)
+  if(exp === 0){
+    return 1;
+  }else{
+    return num*powerCalculator(num, exp-1);
+  }
+}
+powerCalculator(10,1);
+
+
+function reverseString(string) {
+  if(!string.length) {
+    return '';
+  }
+  return string.slice(-1) + reverseString(string.slice(0,-1));
+}
+reverseString('abc');
