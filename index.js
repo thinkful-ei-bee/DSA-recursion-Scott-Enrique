@@ -64,8 +64,18 @@ function fib(num, n=1, arr=[0,0,1]) {
     return newArr[2]; 
   } 
   newArr = [arr[1], arr[2], arr[1]+arr[2]]
+  return fib(num, n+1, newArr) 
+} 
 
-return fib(num, n+1, newArr) } fib(7);
+fib(7);
+
+
+
+function fibonacci(num) {
+  if (num <= 1) return 1;
+
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
 
 
 
