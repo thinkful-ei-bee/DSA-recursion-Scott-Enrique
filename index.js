@@ -58,3 +58,24 @@ function splitter(string, split) {
   }
 }
 splitter('02/20/2020', '0');
+
+function fib(num, n=1, arr=[0,0,1]) { 
+  if(num === n) { 
+    return newArr[2]; 
+  } 
+  newArr = [arr[1], arr[2], arr[1]+arr[2]]
+
+return fib(num, n+1, newArr) } fib(7);
+
+
+
+function factorial(num){
+  if (num === 1){
+    return num;
+  }
+  else{
+  return num * factorial(num-1);
+  }
+}
+
+factorial(5);
