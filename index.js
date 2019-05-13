@@ -32,3 +32,12 @@ function reverseString(string) {
   return string.slice(-1) + reverseString(string.slice(0,-1));
 }
 reverseString('abc');
+
+function triNum(num, n=0) {
+  if (n === num) {
+    return n;
+  } else {
+    return n + triNum(num, n+1);
+  }
+}
+triNum(9);
