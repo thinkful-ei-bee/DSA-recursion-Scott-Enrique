@@ -33,6 +33,7 @@ function reverseString(string) {
 }
 reverseString('abc');
 
+
 function triNum(num, n=0) {
   if (n === num) {
     return n;
@@ -41,3 +42,19 @@ function triNum(num, n=0) {
   }
 }
 triNum(9);
+
+
+function splitter(string, split) {
+  if (!string.length){
+    return '';
+  } 
+  
+  if (string[0] !== split) {
+    return string[0] + splitter(string.slice(1), split); 
+  } 
+  
+  else {
+    return splitter(string.slice(1), split);
+  }
+}
+splitter('02/20/2020', '0');
