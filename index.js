@@ -89,3 +89,42 @@ function factorial(num){
 }
 
 factorial(5);
+
+
+let mySmallMaze = [
+  [' ', ' ', ' '],
+  [' ', '*', ' '],
+  [' ', ' ', 'e']
+];
+
+let maze = [
+  [' ', ' ', ' ', '*', ' ', ' ', ' '],
+  ['*', '*', ' ', '*', ' ', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', '*', '*', '*', '*', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', 'e']
+];
+
+function mazeSolver(maze, iOne=0, iTwo=0, path='') {
+  if (maze[iOne][iTwo] === 'e') {
+    return path;
+  }
+  else if (maze[iOne][iTwo+1] === ' ' || maze[iOne][iTwo+1] === 'e') {
+    console.log(path);
+    mazeSolver(maze, iOne, iTwo+1, path+'R');
+  }
+  else if (maze[iOne+1] && (maze[iOne+1][iTwo] === ' ' || maze[iOne+1][iTwo] === 'e')) {
+    console.log(path);
+    mazeSolver(maze, iOne+1, iTwo, path+'D');
+  }
+  else if (maze[iOne+1] && (maze[iOne-1][iTwo] === ' ' || maze[iOne-1][iTwo] === 'e')) {
+    console.log(path);
+    mazeSolver(maze, iOne-1, iTwo, path+'U');
+  }
+  else if (maze[iOne][iTwo-1] === ' ' || maze[iOne][iTwo-1] === 'e') {
+    console.log(path);
+    mazeSolver(maze, iOne, iTwo-1, path+'L');
+  } 
+}
+
+mazeSolver(maze);
