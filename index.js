@@ -105,25 +105,25 @@ let maze = [
   [' ', ' ', ' ', ' ', ' ', ' ', 'e']
 ];
 
-function mazeSolver(maze, iOne=0, iTwo=0, path='') {
-  if (maze[iOne][iTwo] === 'e') {
+function mazeSolver(maze, y=0, x=0, path='') {
+  if (maze[y][x] === 'e') {
     return path;
   }
-  else if (maze[iOne][iTwo+1] === ' ' || maze[iOne][iTwo+1] === 'e') {
+  else if (maze[y][x+1] === ' ' || maze[y][x+1] === 'e') {
     console.log(path);
-    mazeSolver(maze, iOne, iTwo+1, path+'R');
+    mazeSolver(maze, y, x+1, path+'R');
   }
-  else if (maze[iOne+1] && (maze[iOne+1][iTwo] === ' ' || maze[iOne+1][iTwo] === 'e')) {
+  else if (maze[y+1] && (maze[y+1][x] === ' ' || maze[y+1][x] === 'e')) {
     console.log(path);
-    mazeSolver(maze, iOne+1, iTwo, path+'D');
+    mazeSolver(maze, y+1, x, path+'D');
   }
-  else if (maze[iOne+1] && (maze[iOne-1][iTwo] === ' ' || maze[iOne-1][iTwo] === 'e')) {
+  else if (maze[y+1] && (maze[y-1][x] === ' ' || maze[y-1][x] === 'e')) {
     console.log(path);
-    mazeSolver(maze, iOne-1, iTwo, path+'U');
+    mazeSolver(maze, y-1, x, path+'U');
   }
-  else if (maze[iOne][iTwo-1] === ' ' || maze[iOne][iTwo-1] === 'e') {
+  else if (maze[y][x-1] === ' ' || maze[y][x-1] === 'e') {
     console.log(path);
-    mazeSolver(maze, iOne, iTwo-1, path+'L');
+    mazeSolver(maze, y, x-1, path+'L');
   } 
 }
 
